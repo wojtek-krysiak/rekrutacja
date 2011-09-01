@@ -1,0 +1,40 @@
+<h1>Rekrutacja</h1>
+<h2>Modele scaffold</h2>
+<ul>
+  <li><%= link_to "Invoices", invoices_url %></li>
+  <li><%= link_to "Partners", partners_url %></li>
+</ul>
+
+<div class="info">
+  <h3>TODO</h3>
+  <p>
+    Ta aplikacja rails (v=3.0.7) powstała za pomocą scaffoldu bez żadnych zmian w strukturze plików
+    (tylko lekka zmiana css i dodanie butonów nawigacji). Posiada ona 2 tabele w bazie danych:
+  </p>
+  <p style='text-align: center;'>
+    <%= image_tag "dbs.png" %>
+  </p>
+  <p>Wypełniono je przykładowymi danymi</p>
+  <h3>Należy wykonać następujące zadania:</h3>
+  <ul>
+    <li>
+      W widoku (<%= link_to "tworzenia faktur", new_invoice_path %>) zamienić pole tekstowe "partner" na listę wyboru partnerów.
+      Przy czym w tej liście elementy powinny być wyświetlone w formie <strong>name(short_name)</strong>
+    </li>
+    <li>
+      W widoku (<%= link_to "tworzenia partnerów", new_partner_path %>) dodać walidację pola <i>name</i> tak że:
+      <ul>
+        <li><i>name</i> może być puste gdy użytkownik poda <i>short_name</i></li>
+        <li>gdy użytkownik nie poda <i>short_name</i> to będzie musiał podać <i>name</i></li>
+      </ul>
+    </li>
+    <li>
+      W widoku (<%= link_to "tworzenia partnerów", new_partner_path %>) zamienić format zapytania na ajaxowe. 
+      W kontrolerze przewidzieć należy również sytuację gdy przeglądarka nie obsługuje javascripta, tzn w zależności
+      od formy zapytania należy zwrócić różny kod.
+    </li>
+    <li>
+      W widoku (<%= link_to "listy faktur", invoices_path %>) dodać informację na temat sumy całkowitej wszystkich faktur z aktualnego miesiąca (od pierwszego do pierwszego następnego miesiąca)
+    </li>
+  </ul>
+</div>

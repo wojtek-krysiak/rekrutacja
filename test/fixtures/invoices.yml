@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  invoice_nr: MyString
+  partner_id: 1
+  price: 1.5
+
+two:
+  invoice_nr: MyString
+  partner_id: 1
+  price: 1.5

@@ -1,0 +1,26 @@
+<p><%= link_to "back to main menu", root_url, :class => "big_button" %></p>
+<h1>Listing partners</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Short name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @partners.each do |partner| %>
+  <tr>
+    <td><%= partner.name %></td>
+    <td><%= partner.short_name %></td>
+    <td><%= link_to 'Show', partner %></td>
+    <td><%= link_to 'Edit', edit_partner_path(partner) %></td>
+    <td><%= link_to 'Destroy', partner, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Partner', new_partner_path, :class => "normal_button" %>

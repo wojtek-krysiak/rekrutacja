@@ -1,0 +1,28 @@
+<p><%= link_to "back to main menu", root_url, :class => "big_button" %></p>
+<h1>Listing invoices</h1>
+<h2>This month value: <span>Obliczyć</span></h2>
+<table>
+  <tr>
+    <th>Invoice nr</th>
+    <th>Partner</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @invoices.each do |invoice| %>
+  <tr>
+    <td><%= invoice.invoice_nr %></td>
+    <td><%= invoice.partner_id %></td>
+    <td><%= invoice.price %></td>
+    <td><%= link_to 'Show', invoice %></td>
+    <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
+    <td><%= link_to 'Destroy', invoice, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Invoice', new_invoice_path, :class => "normal_button" %>
